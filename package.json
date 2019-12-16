@@ -1,0 +1,26 @@
+{
+  "name": "discord",
+  "version": "1.0.0",
+  "description": "Discord bot Skeleton",
+  "main": "index.js",
+  "scripts": {
+    "install": "chmod +x new.js",
+    "start": "nodemon index.js",
+    "new": "./new.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-miceli/discord"
+  },
+  "author": "Thomas Miceli <tomus.mic@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomas-miceli/discord/issues"
+  },
+  "homepage": "https://github.com/thomas-miceli/discord#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  }
+}
