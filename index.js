@@ -3,6 +3,8 @@ const Client = new Discord.Client();
 
 require('dotenv').config();
 
+const PREFIX = '!';
+
 /* Actions */
 
 /* Events */

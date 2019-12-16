@@ -17,11 +17,11 @@ let lines = fs.readFileSync('index.js').toString().split("\n");
 
 lines.forEach((line, index, array) => {
     if (line === '/* Actions */') {
-        array.splice(index + 1, 0, `const ${args[0]} = require('./actions/command_${args[0]}');`);
+        array.splice(index + 1, 0, `const ${args[0]} = require('./actions/command_${args[0].toLowerCase()}');`);
     }
 
     if (line.startsWith('Client.on(\'message')) {
-        array.splice(index + 1, 0, `    ${args[0]}.command('!${args[0]}', message);`);
+        array.splice(index + 1, 0, `    ${args[0]}.command(PREFIX + '${args[0]}', message);`);
     }
 });
 
@@ -40,7 +40,7 @@ class ${args[0]} extends Command {
 module.exports = ${args[0]}
 `
 
-fs.writeFileSync(`actions/command_${args[0]}.js`, fileContent);
+fs.writeFileSync(`actions/command_${args[0].toLowerCase()}.js`, fileContent);
 
 console.log('\x1b[36m%s\x1b[0m', '  -> Modified : index.js');
 console.log('\x1b[36m%s\x1b[0m', `  -> Added  : actions/command_${args[0]}.js`);
